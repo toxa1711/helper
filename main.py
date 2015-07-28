@@ -3,7 +3,7 @@ import time
 from importlib.machinery import SourceFileLoader
 import voice_rec
 import Sintez_Audio as sau
-import Play_audio as pau
+import Play as pau
 
 spis = os.listdir('/home/anton/PycharmProjects/untitled1/lib')
 modules = []
@@ -24,7 +24,7 @@ while True:
     pau.play()
 
     x = voice_rec.voice()
-    for i in range(len(spis)-1):
+    for i in range(len(spis)):
         f = SourceFileLoader(modules[i], "lib/"+modules[i]).load_module()
         if f.KEYS == x:
            sau.gen(f.func())

@@ -1,5 +1,3 @@
-__author__ = 'student'
-
 import speech_recognition as sr
 
 
